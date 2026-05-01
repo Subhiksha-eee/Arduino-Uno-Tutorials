@@ -11,3 +11,14 @@ void loop() {
   digitalWrite(12, LOW);   // LED OFF
   delay(1000);
 }
+
+// bare metal equivalent
+void setup(){
+  DDRB|=(1<<4);
+}
+void loop(){
+  PORTB|= (1<<4);
+  delay(1000);
+  PORTB&= ~(1<<4);
+  delay(1000);
+}
